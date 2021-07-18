@@ -23,6 +23,7 @@ namespace MagentoApplication
             driver.FindElement(By.XPath("//div[@class='login-form__bottom']//button[@id='send2']")).Click();
             driver.FindElement(By.LinkText("Log Out")).Click();
 
+            //Close the browser
             driver.Quit();
         }
     }
