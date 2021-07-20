@@ -3,9 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoApplication", "SeleniumWebdriverConcepts\MagentoApplication.csproj", "{156FDEF5-C12F-44C8-8CF7-E3C459F35A38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagentoApplication", "SeleniumWebdriverConcepts\MagentoApplication.csproj", "{156FDEF5-C12F-44C8-8CF7-E3C459F35A38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDFCBank", "HDFCBank\HDFCBank.csproj", "{EE7352E2-8F27-491E-B730-4A3E125A1B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HDFCBank", "HDFCBank\HDFCBank.csproj", "{EE7352E2-8F27-491E-B730-4A3E125A1B68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medibuddy", "Medibuddy\Medibuddy.csproj", "{FC40FDC0-230F-4844-BCFA-0BF3B418E0A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotomeeting", "Gotomeeting\Gotomeeting.csproj", "{4019B3D0-8F43-44CB-BE6C-497CDF7033D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redBus", "redBus\redBus.csproj", "{0DC2A783-02FA-4D94-A7D3-D8FB678C5278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumNunitConcept", "SeleniumNunitConcept\SeleniumNunitConcept.csproj", "{9497E16B-D3F2-423B-9180-C9CF8490297E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenEMR", "OpenEMR\OpenEMR.csproj", "{1D8B561B-B6F5-4B2E-822F-4A85CA9B6ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiBank", "CitiBank\CitiBank.csproj", "{4D857B52-9022-4674-BC62-8DC39E1D2464}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +33,30 @@ Global
 		{EE7352E2-8F27-491E-B730-4A3E125A1B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE7352E2-8F27-491E-B730-4A3E125A1B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE7352E2-8F27-491E-B730-4A3E125A1B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC40FDC0-230F-4844-BCFA-0BF3B418E0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC40FDC0-230F-4844-BCFA-0BF3B418E0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC40FDC0-230F-4844-BCFA-0BF3B418E0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC40FDC0-230F-4844-BCFA-0BF3B418E0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4019B3D0-8F43-44CB-BE6C-497CDF7033D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4019B3D0-8F43-44CB-BE6C-497CDF7033D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4019B3D0-8F43-44CB-BE6C-497CDF7033D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4019B3D0-8F43-44CB-BE6C-497CDF7033D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC2A783-02FA-4D94-A7D3-D8FB678C5278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC2A783-02FA-4D94-A7D3-D8FB678C5278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC2A783-02FA-4D94-A7D3-D8FB678C5278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC2A783-02FA-4D94-A7D3-D8FB678C5278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9497E16B-D3F2-423B-9180-C9CF8490297E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9497E16B-D3F2-423B-9180-C9CF8490297E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9497E16B-D3F2-423B-9180-C9CF8490297E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9497E16B-D3F2-423B-9180-C9CF8490297E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8B561B-B6F5-4B2E-822F-4A85CA9B6ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8B561B-B6F5-4B2E-822F-4A85CA9B6ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8B561B-B6F5-4B2E-822F-4A85CA9B6ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8B561B-B6F5-4B2E-822F-4A85CA9B6ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,88 @@
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Threading;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
+
+namespace OpenEMR
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+            IWebDriver driver = new ChromeDriver();
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            driver.Url = "https://demo.openemr.io/b/openemr/interface/login/login.php?site=default";
+
+            driver.FindElement(By.Id("authUser")).SendKeys("admin");
+            driver.FindElement(By.Id("clearPass")).SendKeys("pass");
+            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+
+            //Thread.Sleep(5000);
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
+            wait.Until(x => x.FindElement(By.XPath("//div[contains(text(),'Patient/Client')]")));
+
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(driver.FindElement(By.XPath("//div[contains(text(),'Patient/Client')]"))).Build().Perform();
+            driver.FindElement(By.XPath("(//div[text()='Patients'])[1]")).Click();
+
+            //move to frame fin
+            driver.SwitchTo().Frame("fin");
+
+            driver.FindElement(By.Id("create_patient_btn1")).Click();
+
+            driver.SwitchTo().DefaultContent();
+
+            //move to pat frame
+            driver.SwitchTo().Frame("pat");
+
+            driver.FindElement(By.Id("form_fname")).SendKeys("John");
+            driver.FindElement(By.Id("form_lname")).SendKeys("Smith");
+            driver.FindElement(By.Id("form_DOB")).SendKeys("2021-07-20");
+
+            SelectElement selectSex = new SelectElement(driver.FindElement(By.Id("form_sex")));
+            selectSex.SelectByText("Male");
+
+            driver.FindElement(By.Id("create")).Click();
+            driver.SwitchTo().DefaultContent();
+
+            //move to modalframe
+            driver.SwitchTo().Frame("modalframe");
+
+            driver.FindElement(By.XPath("//input[@value='Confirm Create New Patient']")).Click();
+            driver.SwitchTo().DefaultContent();
+
+            //Thread.Sleep(5000);
+
+            //Switch to alert and accept 
+            
+            string alertText = wait.Until(x => x.SwitchTo().Alert()).Text;
+            Console.WriteLine(alertText);
+
+            wait.Until(x => x.SwitchTo().Alert()).Accept();
+
+
+
+            //close pop up
+
+            driver.FindElement(By.XPath("//div[@class='closeDlgIframe']")).Click();
+
+            driver.SwitchTo().Frame("pat");
+
+            
+            string actualText = driver.FindElement(By.XPath("//h2[contains(text(),'Medical Record Dashboard)]")).Text;
+            Console.WriteLine(actualText);
+
+
+
+
+        }
+    }
+}
