@@ -59,14 +59,23 @@ namespace OpenEMR
             driver.FindElement(By.XPath("//input[@value='Confirm Create New Patient']")).Click();
             driver.SwitchTo().DefaultContent();
 
-            //Thread.Sleep(5000);
 
-            //Switch to alert and accept 
-            
-            string alertText = wait.Until(x => x.SwitchTo().Alert()).Text;
-            Console.WriteLine(alertText);
+
+            //fluent wait
+            DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver);
+            wait.Timeout = TimeSpan.FromSeconds(50);
+            wait.PollingInterval = TimeSpan.FromSeconds(5);
+            wait.IgnoreExceptionTypes(typeof(NoAlertPresentException));//ignore no alert exception
+
+            string actualValueOfAlert = wait.Until(x => x.SwitchTo().Alert()).Text;
+            Console.WriteLine(actualValueOfAlert);
 
             wait.Until(x => x.SwitchTo().Alert()).Accept();
+
+            if (driver.FindElements(By.XPath("//div[@class='closeDlgIframe']")).Count > 0) // check element present or not
+            {
+                driver.FindElement(By.XPath("//div[@class='closeDlgIframe']")).Click();
+            }
 
 
 
@@ -77,9 +86,21 @@ namespace OpenEMR
             driver.SwitchTo().Frame("pat");
 
             
-            string actualText = driver.FindElement(By.XPath("//h2[contains(text(),'Medical Record Dashboard)]")).Text;
+            string actualText = driver.FindElement(By.XPath("//h2[contains(text(),'Medical Record Dashboard')]")).Text;
             Console.WriteLine(actualText);
 
+            //public bool IsElementPresent()
+            //{
+            //    try
+            //    {
+            //        driver.FindElement(By.XPath("//div[@class='closeDlgIframe']"));
+            //        return true;
+            //    }
+            //    catch
+            //    {
+            //        return false
+            //    }
+            //}
 
 
 

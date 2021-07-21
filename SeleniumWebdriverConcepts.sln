@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenEMR", "OpenEMR\OpenEMR.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiBank", "CitiBank\CitiBank.csproj", "{4D857B52-9022-4674-BC62-8DC39E1D2464}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTable", "DynamicTable\DynamicTable.csproj", "{ACD1575C-2268-4410-B0CE-47C17C7198A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D857B52-9022-4674-BC62-8DC39E1D2464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD1575C-2268-4410-B0CE-47C17C7198A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD1575C-2268-4410-B0CE-47C17C7198A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD1575C-2268-4410-B0CE-47C17C7198A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD1575C-2268-4410-B0CE-47C17C7198A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
