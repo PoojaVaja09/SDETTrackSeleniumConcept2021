@@ -62,10 +62,10 @@ namespace OpenEMR
 
 
             //fluent wait
-            DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver);
-            wait.Timeout = TimeSpan.FromSeconds(50);
-            wait.PollingInterval = TimeSpan.FromSeconds(5);
-            wait.IgnoreExceptionTypes(typeof(NoAlertPresentException));//ignore no alert exception
+            //DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver);
+            //wait.Timeout = TimeSpan.FromSeconds(50);
+            //wait.PollingInterval = TimeSpan.FromSeconds(5);
+            //wait.IgnoreExceptionTypes(typeof(NoAlertPresentException));//ignore no alert exception
 
             string actualValueOfAlert = wait.Until(x => x.SwitchTo().Alert()).Text;
             Console.WriteLine(actualValueOfAlert);
