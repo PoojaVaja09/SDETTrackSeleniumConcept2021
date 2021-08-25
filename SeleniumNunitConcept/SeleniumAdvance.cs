@@ -12,6 +12,15 @@ namespace SeleniumNunitConcept
     class SeleniumAdvance
     {
         [Test]
+        public void AutoItUploadTest()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            driver.Url = "http://www.echoecho.com/javascript4.htm";
+
+        }
+        [Test]
         public void HandleAlertExplcitWaitTest()
         {
             IWebDriver driver = new ChromeDriver();
@@ -36,7 +45,7 @@ namespace SeleniumNunitConcept
             //wait.Until(driver => driver.FindElement(By.XPath("//div[@class='headline']")));
             text = wait.Until(x => x.FindElement(By.XPath("//div[@class='headline']"))).Text;
             Console.WriteLine(text);
-
+            
             //driver.FindElement(By.Id("")).SendKeys("2021-07-19");
         }
 
